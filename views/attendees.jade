@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1.
+		Attendees
+	ul 
+		each attendee, i in attendees
+			li
+				a(href="mailto:#{attendee.email}")= attendee.name

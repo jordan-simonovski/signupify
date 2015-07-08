@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	video#bgvid(autoplay, loop, muted, poster="images/background.jpg")
+		source(src="videos/Contrast.webm", type="video/webm")
+		source(src="videos/Contrast.mp4", type="video/mp4")
+	div#overlay(class="overlay")
+	div(class="text-section")
+		h1(class="title-header")= title
+		p Welcome to #{title}
+		form#formAddAttendee(name="addAtendee", method="post", action="/addAttendee")
+			input#inputName(type="text", placeholder="name", name="name", class="rounded input-field")
+			br
+			input#inputEmail(type="text", placeholder="email", name="email", class="rounded input-field")
+			br
+			button#btnSubmit(type="submit", class="rounded") Submit
